@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一个简洁的 2048 小游戏" />
+    <title>2048 · 合成数字</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">NUMBER PUZZLE</p>
+          <h1>2048</h1>
+          <p class="subtitle">滑动方块，合成 <strong>2048</strong>。</p>
+        </div>
+        <div class="scores" aria-label="游戏分数">
+          <div class="score-box"><span>得分</span><strong id="score">0</strong></div>
+          <div class="score-box"><span>最高分</span><strong id="best">0</strong></div>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="游戏操作">
+        <p class="hint">使用方向键或 WASD 移动，也可以滑动棋盘。</p>
+        <button id="new-game" class="primary-button" type="button">新游戏</button>
+      </section>
+
+      <section id="board" class="board" aria-label="2048 棋盘" tabindex="0"></section>
+
+      <nav class="mobile-controls" aria-label="移动控制">
+        <button data-direction="up" type="button" aria-label="向上">↑</button>
+        <div>
+          <button data-direction="left" type="button" aria-label="向左">←</button>
+          <button data-direction="down" type="button" aria-label="向下">↓</button>
+          <button data-direction="right" type="button" aria-label="向右">→</button>
+        </div>
+      </nav>
+
+      <footer class="footer">每次移动会出现一个新数字。尽可能合成更大的数字！</footer>
+    </main>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
